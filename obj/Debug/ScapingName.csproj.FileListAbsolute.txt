@@ -1,0 +1,16 @@
+D:\b4p3p\Documenti\Unity5Project\ScapingName\bin\Debug\ScapingName.exe.config
+D:\b4p3p\Documenti\Unity5Project\ScapingName\bin\Debug\ScapingName.exe
+D:\b4p3p\Documenti\Unity5Project\ScapingName\bin\Debug\ScapingName.pdb
+D:\b4p3p\Documenti\Unity5Project\ScapingName\obj\Debug\ScapingName.csprojResolveAssemblyReference.cache
+D:\b4p3p\Documenti\Unity5Project\ScapingName\obj\Debug\MainWindow.baml
+D:\b4p3p\Documenti\Unity5Project\ScapingName\obj\Debug\MainWindow.g.cs
+D:\b4p3p\Documenti\Unity5Project\ScapingName\obj\Debug\App.g.cs
+D:\b4p3p\Documenti\Unity5Project\ScapingName\obj\Debug\ScapingName_MarkupCompile.cache
+D:\b4p3p\Documenti\Unity5Project\ScapingName\obj\Debug\ScapingName.g.resources
+D:\b4p3p\Documenti\Unity5Project\ScapingName\obj\Debug\ScapingName.Properties.Resources.resources
+D:\b4p3p\Documenti\Unity5Project\ScapingName\obj\Debug\ScapingName.csproj.GenerateResource.Cache
+D:\b4p3p\Documenti\Unity5Project\ScapingName\obj\Debug\ScapingName.exe
+D:\b4p3p\Documenti\Unity5Project\ScapingName\obj\Debug\ScapingName.pdb
+D:\b4p3p\Documenti\Unity5Project\ScapingName\bin\Debug\HtmlAgilityPack.dll
+D:\b4p3p\Documenti\Unity5Project\ScapingName\bin\Debug\HtmlAgilityPack.pdb
+D:\b4p3p\Documenti\Unity5Project\ScapingName\bin\Debug\HtmlAgilityPack.xml

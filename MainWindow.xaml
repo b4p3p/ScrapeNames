@@ -1,0 +1,17 @@
+﻿<Window x:Class="ScrapeName.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="659.667">
+    <Grid>
+        <ListBox Height="309" Margin="10,10,0,0" VerticalAlignment="Top"
+                 Name="lstName_male" HorizontalAlignment="Left" Width="150"/>
+        <ListBox Height="309" Margin="165,10,0,0" VerticalAlignment="Top"
+        	     x:Name="lstName_female" HorizontalAlignment="Left" Width="150"/>
+        <TextBox Height="23" Margin="320,10,10,0" TextWrapping="Wrap" 
+                 Text="http://www.behindthename.com/names/usage/italian" VerticalAlignment="Top"
+                 Name="txtURL"/>
+        <Button Content="Scrape" Margin="567,38,10,0" VerticalAlignment="Top" Height="28" Name="cmdScrape" Click="cmdScrape_Click"/>
+        
+
+    </Grid>
+</Window>
