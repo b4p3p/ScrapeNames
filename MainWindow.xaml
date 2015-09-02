@@ -9,9 +9,13 @@
         	     x:Name="lstName_female" HorizontalAlignment="Left" Width="150"/>
         <TextBox Height="23" Margin="320,10,10,0" TextWrapping="Wrap" 
                  Text="http://www.behindthename.com/names/usage/italian" VerticalAlignment="Top"
-                 Name="txtURL"/>
-        <Button Content="Scrape" Margin="567,38,10,0" VerticalAlignment="Top" Height="28" Name="cmdScrape" Click="cmdScrape_Click"/>
-        
+                 x:Name="txtURLName"/>
+        <Button Content="Scrape" Margin="567,38,10,0" VerticalAlignment="Top" Height="28" Name="cmdScrape" Click="cmdScrapeName_Click"/>
+        <TextBox Height="23" Margin="320,74,9.6,0" TextWrapping="Wrap" 
+        	Text="http://surnames.behindthename.com/names/usage/italian" VerticalAlignment="Top"
+        	x:Name="txtURLSurname"/>
+        <Button Content="Scrape" Margin="567,102,9.6,0" VerticalAlignment="Top" Height="28" x:Name="cmdScrape_Copy" Click="cmdScrapeSurname_Click"/>
+
 
     </Grid>
 </Window>

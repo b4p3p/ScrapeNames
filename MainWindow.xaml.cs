@@ -22,33 +22,47 @@ namespace ScrapeName
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string NAME_FILE = "names.csv";
-        LinkedList<String> names_male = new LinkedList<string>();
-        LinkedList<String> names_female = new LinkedList<string>();
+        private const string NAME_FILE_NAME = "names.csv";
+        private const string NAME_FILE_SURNAME = "surname.csv";
+
+        private LinkedList<String> names_male = new LinkedList<string>();
+        private LinkedList<String> names_female = new LinkedList<string>();
+        private string URL = ""; 
 
         public MainWindow()
         {
             InitializeComponent();
-            //cmdScrape_Click(null, null);
         }
 
-        private void cmdScrape_Click(object sender, RoutedEventArgs e)
-        {
+        private void Inizializza(){
             names_male = new LinkedList<string>();
             names_female = new LinkedList<string>();
-            string URL = txtURL.Text;
+        }
 
-            //prendo i nomi
+        private void cmdScrapeName_Click(object sender, RoutedEventArgs e)
+        {
+            URL = txtURLName.Text;
+            Inizializza();
             GetNames(URL);
+            Elabora();
+        }
+
+        private void cmdScrapeSurname_Click(object sender, RoutedEventArgs e)
+        {
+            URL = txtURLSurname.Text;
+            Inizializza();
+            GetNames(URL);
+            Elabora();
+        }
+
+        private void Elabora()
+        {
             lstName_male.ItemsSource = names_male;
             lstName_female.ItemsSource = names_female;
 
             //creo il CSV
             CreateCSV();
-
         }
-
-        
 
         private void GetNames ( string URL )
         {
@@ -97,9 +111,12 @@ namespace ScrapeName
                 if ( gender == "f")
                 {
                     names_female.AddLast(name);
-                }
-                if (gender == "m")
+                }else if(gender == "m")
                 {
+                    names_male.AddLast(name);
+                }else
+                {
+                    //per i cognomi che non hanno genere
                     names_male.AddLast(name);
                 }
             }
@@ -111,18 +128,31 @@ namespace ScrapeName
         {
             var csv = new StringBuilder();
 
-            foreach (String name in names_male)
+            if (URL.Contains("surname"))
             {
-                string newLine = string.Format("{0},{1}{2}", name, "m", Environment.NewLine);
-                csv.Append(newLine); 
-            }
-            foreach (String name in names_female)
+                foreach (String name in names_male)
+                {
+                    string newLine = string.Format("{0}{1}", name, Environment.NewLine);
+                    csv.Append(newLine);
+                }
+                File.WriteAllText(NAME_FILE_SURNAME, csv.ToString());
+            }else
             {
-                string newLine = string.Format("{0},{1}{2}", name, "f", Environment.NewLine);
-                csv.Append(newLine);
+                foreach (String name in names_male)
+                {
+                    string newLine = string.Format("{0},{1}{2}", name, "m", Environment.NewLine);
+                    csv.Append(newLine);
+                }
+                foreach (String name in names_female)
+                {
+                    string newLine = string.Format("{0},{1}{2}", name, "f", Environment.NewLine);
+                    csv.Append(newLine);
+                }
+                File.WriteAllText(NAME_FILE_NAME, csv.ToString());
             }
-            File.WriteAllText(NAME_FILE, csv.ToString());
+
             MessageBox.Show("Scritto il file!");
         }
+        
     }
 }
